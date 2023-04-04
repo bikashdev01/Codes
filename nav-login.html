@@ -1,0 +1,195 @@
+<!---Log-in-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log-in Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-image: url('/bg/10.jpg');
+            height: 100vh;
+        }
+
+        .login-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            padding: 40px;
+            margin: 20px auto;
+            transform: translate(-50%, -55%);
+            background: transparent;
+            backdrop-filter: blur(3px);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+            border-radius: 10px;
+        }
+
+        .login-box p:first-child {
+            margin: 0 0 30px;
+            padding: 0;
+            color: #2f002c;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .login-box .user-box {
+            position: relative;
+        }
+
+        .login-box .user-box input {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #2f002c;
+            margin-bottom: 30px;
+            border: none;
+            border-bottom: 1px solid #2f002c;
+            outline: none;
+            background: transparent;
+        }
+
+        .login-box .user-box label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #2f002c;
+            pointer-events: none;
+            transition: .5s;
+        }
+
+        .login-box .user-box input:focus~label,
+        .login-box .user-box input:valid~label {
+            top: -20px;
+            left: 0;
+            color: #2f002c;
+            font-size: 12px;
+        }
+
+        .login-box form a {
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
+            font-weight: bold;
+            color: #fff;
+            font-size: 16px;
+            text-decoration: none;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: .5s;
+            margin-top: 40px;
+            letter-spacing: 3px
+        }
+
+        .login-box a:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 24px 0;
+        }
+
+        /*nav */
+        header {
+            padding: 1.7rem 1rem;
+            backdrop-filter: blur(10px);
+            background-color: transparent;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            max-width: 80%;
+            margin: auto;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 800;
+        }
+
+        .logo a {
+            color: #2f002c;
+            text-decoration: none;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            padding: 0;
+            background-color: transparent;
+            overflow: hidden;
+        }
+
+        li {
+            padding: 0rem 1.1rem;
+            float: left;
+        }
+
+        li a {
+            color: #2f002c;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: .7px;
+        }
+
+        li a:hover {
+            color: #C8363E;
+            transition: all .3s ease-in-out
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#">Portfolio.</a>
+            </div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Skills</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <div class="login-box">
+            <p>Login</p>
+            <form>
+                <div class="user-box">
+                    <input required="true" name="" type="email">
+                    <label>Email</label>
+                </div>
+                <div class="user-box">
+                    <input required="true" name="" type="password">
+                    <label>Password</label>
+                </div>
+                <a href="#">Submit</a>
+            </form>
+        </div>
+    </section>
+
+
+</body>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+</style>
+
+</html>
