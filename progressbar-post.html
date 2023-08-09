@@ -1,0 +1,248 @@
+<!---With UL -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <title>Responsive Nav Without Js</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 800vh;
+            font-family: 'Josefin Sans';
+        }
+
+        /*nav */
+        header {
+            padding: 2rem 0rem 1.4rem 0rem;
+            background-color: white;
+            position: sticky;
+            top: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 80%;
+            margin: auto;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 800;
+        }
+
+        .logo a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            padding: 0;
+            background-color: transparent;
+            overflow: hidden;
+        }
+
+        li {
+            padding: 0rem 1.1rem;
+            float: left;
+        }
+
+        li a {
+            color: #000;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: .7px;
+        }
+
+        li a.active,
+        li a:hover {
+            color: #000;
+            transition: all .3s ease-in-out
+        }
+
+        #click {
+            display: none;
+        }
+
+        .menu {
+            display: none;
+        }
+
+        /* Progress */
+        .page-header.is-sticky {
+            position: fixed !important;
+            padding: 8px 0;
+            animation: slideDown 0.35s ease-out;
+        }
+
+        .progress-container {
+            background-color: #EDEBEB;
+            height: 4px;
+            width: 100%;
+            position: sticky;
+            top: 96px;
+
+        }
+
+        .progress-bar {
+            background-color: #F1353C;
+            height: 4px;
+            width: 0%;
+        }
+
+        .sticky-pro {
+            position: fixed;
+            top: 92px;
+            z-index: 11;
+        }
+
+        .btn {
+            background: #000;
+            color: #fff;
+            padding: 0.6rem;
+            border-radius: 0.4rem;
+            border: 2px solid;
+            font-size: .95rem;
+            cursor: pointer;
+            font-family: 'Josefin Sans';
+        }
+
+        .detail {
+            display: grid;
+            place-items: center;
+            margin-top: 15vw;
+            font-size: 1.4rem;
+        }
+
+        @media only screen and (max-width:1024px) {
+            nav {
+                max-width: 98%;
+            }
+        }
+
+        @media only screen and (max-width:768px) {
+            html {
+                font-size: 80%;
+            }
+
+            nav {
+                max-width: 100%;
+                margin: 0 1rem;
+            }
+        }
+
+        @media only screen and (max-width:480px) {
+            html {
+                font-size: 85%;
+            }
+
+            header {
+                height: auto;
+            }
+
+            li {
+                padding: 1rem 1.1rem;
+            }
+
+            .menu {
+                display: block;
+                font-size: 1.5rem;
+                font-weight: bold;
+                color: #000;
+            }
+
+            ul {
+                background: #fff;
+                width: 100%;
+                height: 100vh;
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                top: 4rem;
+                left: -100%;
+                z-index: 111111;
+            }
+
+            #click:checked~ul {
+                left: 0%;
+                transition: all 0.3s ease;
+            }
+
+            .btn {
+                display: none;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="page-header">
+            <div class="logo">
+                <a href="#">Portfolio.</a>
+            </div>
+            <input type="checkbox" id="click">
+
+            <label for="click" class="mainicon">
+                <div class="menu">
+                    <i class="bi bi-list"></i>
+                </div>
+            </label>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Skills</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <button class="btn">Start Free Trial</button>
+        </nav>
+    </header>
+
+    <div class="progress-container page-header">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <div class="detail">Welcome to WebDevs Page</div>
+
+
+
+
+
+
+</body>
+<script>
+    //processbar on scroll 
+    function progressBarScroll() {
+        let winScroll = document.body.scrollTop || document.documentElement.scrollTop,
+            height = document.documentElement.scrollHeight - document.documentElement.clientHeight,
+            scrolled = (winScroll / height) * 100;
+        document.getElementById("progressBar").style.width = scrolled + "%";
+    }
+    window.onscroll = function () {
+        progressBarScroll();
+    };
+
+</script>
+
+</html>
